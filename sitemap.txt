@@ -1,2 +1,10 @@
+https://hoshinoyuuichi.github.io/404/404.html
+https://hoshinoyuuichi.github.io/myself/index.html
+https://hoshinoyuuichi.github.io/about/index.html
+https://hoshinoyuuichi.github.io/timeline/index.html
+https://hoshinoyuuichi.github.io/link/index.html
+https://hoshinoyuuichi.github.io/messageboard/index.html
+https://hoshinoyuuichi.github.io/categories/index.html
+https://hoshinoyuuichi.github.io/tags/index.html
 https://hoshinoyuuichi.github.io/2023/01/25/hello-world/
 https://hoshinoyuuichi.github.io/
