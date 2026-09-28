@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: HoshinoYuuichi/hoshinoyuuichi.github.io
+  branch: main
+
+site_url: https://blog.yuuichi.me
+display_url: https://blog.yuuichi.me
+logo_url: https://blog.yuuichi.me/img/tit.png
+
+locale: zh_Hans
+
+media_folder: source/img/uploads
+public_folder: /img/uploads
+
+collections:
+  - name: posts
+    label: 文章
+    label_singular: 文章
+    folder: source/_posts
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    preview_path_date_field: date
+    sortable_fields: [date, title]
+    view_filters:
+      - label: 最近文章
+        field: date
+        pattern: '202[5-9]'
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: 'YYYY-MM-DD HH:mm:ss', date_format: 'YYYY-MM-DD', time_format: 'HH:mm:ss' }
+      - { label: 标签, name: tags, widget: list, required: false, default: [] }
+      - { label: 分类, name: categories, widget: list, required: false, default: [] }
+      - { label: 封面图, name: cover, widget: image, required: false }
+      - { label: 摘要, name: description, widget: text, required: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: pages
+    label: 页面
+    label_singular: 页面
+    files:
+      - label: 关于
+        name: about
+        file: source/about/index.md
+        fields:
+          - { label: 标题, name: title, widget: string }
+          - { label: 正文, name: body, widget: markdown }
+      - label: 留言板
+        name: messageboard
+        file: source/messageboard/index.md
+        fields:
+          - { label: 标题, name: title, widget: string }
+          - { label: 正文, name: body, widget: markdown }
+      - label: 友链
+        name: link
+        file: source/link/index.md
+        fields:
+          - { label: 标题, name: title, widget: string }
+          - { label: 正文, name: body, widget: markdown }
