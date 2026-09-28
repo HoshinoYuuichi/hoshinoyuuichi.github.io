@@ -8,11 +8,6 @@ if theme.aside.card_webinfo.enable
         .webinfo-item
           .item-name= _p('aside.card_webinfo.article_name') + " :"
           .item-count= site.posts.length
-      if theme.runtimeshow.enable
-        .webinfo-item
-          .item-name= _p('aside.card_webinfo.runtime.name') + " :"
-          .item-count#runtimeshow(data-publishDate=date_xml(theme.runtimeshow.publish_date))
-            i.fa-solid.fa-spinner.fa-spin
       if theme.wordcount.enable && theme.wordcount.total_wordcount
         .webinfo-item
           .item-name=_p('aside.card_webinfo.site_wordcount') + " :"
@@ -31,5 +26,10 @@ if theme.aside.card_webinfo.enable
         .webinfo-item
           .item-name= _p('aside.card_webinfo.last_push_date.name') + " :"
           .item-count#last-push-date(data-lastPushDate=date_xml(Date.now()))
+            i.fa-solid.fa-spinner.fa-spin
+      if theme.runtimeshow.enable
+        .webinfo-item
+          .item-name= _p('aside.card_webinfo.runtime.name') + " :"
+          .item-count#runtimeshow(data-publishDate=date_xml(theme.runtimeshow.publish_date))
             i.fa-solid.fa-spinner.fa-spin
 

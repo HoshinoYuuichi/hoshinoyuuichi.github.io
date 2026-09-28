@@ -49,7 +49,7 @@ collections:
         fields:
           - { label: 侧边栏公告, name: announcement, widget: text, required: false }
           - { label: 作者卡片简介, name: author_desc, widget: text, required: false }
-          - { label: 建站日期, name: runtime_publish_date, widget: date, format: YYYY-MM-DD, hint: '用于网站资讯中的运行时间' }
+          - { label: 建站日期, name: runtime_publish_date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD, hint: '用于网站运行时间' }
           - { label: Follow Me 文字, name: follow_me_text, widget: string }
           - { label: Follow Me 图标, name: follow_me_icon, widget: string, hint: '如 fas fa-user-plus' }
           - { label: Follow Me 链接, name: follow_me_link, widget: string }

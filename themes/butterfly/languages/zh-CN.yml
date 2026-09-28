@@ -63,10 +63,10 @@ aside:
   card_archives: 归档
   card_recent_post: 最新文章
   card_webinfo:
-    headline: 网站资讯
+    headline: 网站状态
     article_name: 文章数目
     runtime:
-      name: 已运行时间
+      name: 网站运行时间
       unit: 天
     last_push_date:
       name: 最后更新时间
