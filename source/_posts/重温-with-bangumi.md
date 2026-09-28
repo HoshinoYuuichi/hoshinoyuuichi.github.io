@@ -6,7 +6,7 @@ tags:
 categories:
   - 生活
 cover: /img/uploads/pasted-image-1790588291814.png
-description: 个人bangumi链接：https://bangumi.tv/user/hoshinoyuuichi
+description: 
 ---
 
 之前就一直听过“老资历”们都经常玩bangumi，凑巧搜了个追番软件叫Kazumi，而且支持从bangumi同步，就顺手把bangumi注册了。
@@ -16,3 +16,5 @@ description: 个人bangumi链接：https://bangumi.tv/user/hoshinoyuuichi
 但是很多老番还是觉得刷一遍两遍都不够，像是《天降之物》——我第一个追的番剧，且不谈关于涩涩的内容，剧情上关于伊卡洛斯的降落、和小智的羁绊、以及最后仓促但还算相对圆满的结局——制作组没钱了。还有《头文字D》，m.o.v.e的歌曲配这种赛车剧情还是很令人打鸡血的。
 
 后面再等等更新吧，像是《约战》完结篇这种。只要活得久，啥都能赶上。
+
+个人bangumi链接：https://bangumi.tv/user/hoshinoyuuichi
