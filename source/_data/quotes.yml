@@ -2,7 +2,7 @@ mode: online
 hitokoto_category: k
 fixed_quote: 永远相信美好的事情即将发生
 local_quotes:
-  - text: 永远相信美好的事情即将发生
+  - text: 永远相信美好的事情即将发生。
     from: 雷军
   - text: 我们都是阴沟里的虫子，但总还是得有人仰望星空。
     from: 王尔德
