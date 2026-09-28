@@ -30,7 +30,7 @@ hexo.extend.tag.register('aboutdata', () => {
       const glyph = l.img
         ? `<img class="about-link-icon" src="${l.img}" alt="${l.name}" />`
         : `<i class="${l.icon}"></i>`
-      return `<a class="about-link-btn" href="${l.url}"${/^(https?:|mailto:)/.test(l.url) ? ' target="_blank"' : ''} rel="noopener">${glyph} <span>${l.name}</span></a>`
+      return `<a class="about-link-btn" href="${l.url}" title="${l.name}"${/^(https?:|mailto:)/.test(l.url) ? ' target="_blank"' : ''} rel="noopener">${glyph}</a>`
     })
     .join('')
 

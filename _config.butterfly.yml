@@ -41,8 +41,10 @@ copy:
 # formal:
 #   icon: link || the description
 social:
+  fas fa-envelope: mailto:HoshinoYuuichi@foxmail.com || 邮箱
   fab fa-github: https://github.com/Hoshinoyuuichi || Github
   fab fa-bilibili: https://space.bilibili.com/122659524 || Bilibili
+  fab fa-twitter: https://x.com/Hoshino_Yuuichi || X
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
@@ -96,7 +98,7 @@ disable_top_img: false
 index_img: /img/index_img.png
 
 # If the banner of page not setting, it will show the top_img
-default_top_img:
+default_top_img: /img/index_img.png
 
 # The banner image of archive page
 archive_img:
