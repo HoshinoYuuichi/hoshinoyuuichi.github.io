@@ -6,7 +6,7 @@ tags:
 categories:
   - 博客
   - ACG
-cover: ''
+cover: /img/uploads/pasted-image-1790588291814.png
 description: 个人bangumi链接：https://bangumi.tv/user/hoshinoyuuichi
 ---
 
