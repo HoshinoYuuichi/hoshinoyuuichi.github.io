@@ -1,0 +1,29 @@
+avatar: /img/tit.png
+name: 星野悠一
+name_en: HoshinoYuuichi
+tagline: 一个普通的御宅族 / 业余开发者 / 永远的学习者
+motto: 泪藏于心，笑逐颜开。今天的我，也要继续前行。
+intro:
+  - '**技术折腾笔记**：建站、编程、工具与踩坑记录；'
+  - '**ACG 日常**：番剧、游戏、音乐和碎碎念；'
+  - '**生活随想**：旅行、摄影，以及微小却值得纪念的瞬间。'
+footer_note: '程序基于 [Hexo](https://hexo.io/) 与 [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) 主题搭建，托管在 GitHub Pages 上。'
+tags:
+  - 编程
+  - 折腾
+  - 动漫
+  - 游戏
+  - 音乐
+  - 摄影
+  - 旅行
+  - 摸鱼
+links:
+  - name: Bilibili
+    icon: fa-brands fa-bilibili
+    url: https://space.bilibili.com/122659524
+  - name: GitHub
+    icon: fa-brands fa-github
+    url: https://github.com/Hoshinoyuuichi
+  - name: 留言板
+    icon: fa-solid fa-paper-plane
+    url: /messageboard/

@@ -438,7 +438,7 @@ messenger:
 footer:
   owner:
     enable: true
-    since: 2023
+    since: 2026
   custom_text: 
   copyright: false # Copyright of theme and framework
   ICP: 
@@ -890,7 +890,7 @@ css_prefix: true
 inject:
   head:
   bottom:
-    # - <script src="xxxx"></script>
+    - <script async data-pjax src="/js/busuanzi-watchdog.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work

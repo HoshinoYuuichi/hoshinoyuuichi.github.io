@@ -42,22 +42,95 @@ collections:
     label: 页面
     label_singular: 页面
     files:
-      - label: 关于
-        name: about
-        file: source/about/index.md
-        fields:
-          - { label: 标题, name: title, widget: string }
-          - { label: 正文, name: body, widget: markdown }
       - label: 留言板
         name: messageboard
         file: source/messageboard/index.md
         fields:
           - { label: 标题, name: title, widget: string }
+          - { label: 摘要, name: description, widget: text, required: false }
           - { label: 正文, name: body, widget: markdown }
+      - label: 友链页面
+        name: linkpage
+        file: source/link/index.md
+        fields:
+          - { label: 标题, name: title, widget: string }
+          - { label: 摘要, name: description, widget: text, required: false }
+          - { label: 正文, name: body, widget: markdown }
+
+  - name: homepage
+    label: 首页内容
+    label_singular: 首页内容
+    files:
+      - label: 关于页内容
+        name: aboutdata
+        file: source/_data/about.yml
+        description: 编辑「关于」页的头像、简介、兴趣标签和联系方式。
+        fields:
+          - { label: 头像, name: avatar, widget: image }
+          - { label: 中文名, name: name, widget: string }
+          - { label: 英文名, name: name_en, widget: string }
+          - { label: 身份标签, name: tagline, widget: string }
+          - { label: 座右铭, name: motto, widget: string }
+          - label: 介绍要点
+            name: intro
+            widget: list
+            summary: '{{fields.item}}'
+            field: { label: 内容, name: item, widget: string }
+          - { label: 底部说明（支持链接）, name: footer_note, widget: text, required: false }
+          - label: 兴趣标签
+            name: tags
+            widget: list
+            summary: '{{fields.item}}'
+            field: { label: 标签, name: item, widget: string }
+          - label: 联系方式
+            name: links
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - { label: 名称, name: name, widget: string }
+              - { label: 图标类名, name: icon, widget: string, hint: '如 fa-brands fa-bilibili' }
+              - { label: 链接, name: url, widget: string }
+
+      - label: Myself 页内容
+        name: myselfdata
+        file: source/_data/myself.yml
+        description: 编辑「Myself」页的横幅、关键词和十问十答。
+        fields:
+          - { label: 英文名, name: name_en, widget: string }
+          - { label: 副标题, name: subtitle, widget: string }
+          - label: 关键词
+            name: keywords
+            widget: list
+            summary: '{{fields.item}}'
+            field: { label: 关键词, name: item, widget: string }
+          - label: 十问十答
+            name: qa
+            widget: list
+            summary: 'Q · {{fields.q}}'
+            fields:
+              - { label: 问题, name: q, widget: string }
+              - { label: 回答, name: a, widget: text }
+
+      - label: 日志时间线
+        name: timelinedata
+        file: source/_data/timeline.yml
+        description: 编辑「日志」页的时间节点。
+        fields:
+          - { label: 开头语, name: intro, widget: text, required: false }
+          - label: 时间节点
+            name: items
+            widget: list
+            summary: '{{fields.date}} · {{fields.title}}'
+            fields:
+              - { label: 日期, name: date, widget: string, hint: '如 2026-09 或 Future' }
+              - { label: 标题, name: title, widget: string }
+              - { label: 描述, name: desc, widget: text }
+              - { label: 标记为未来, name: future, widget: boolean, default: false }
+
       - label: 友链数据
         name: linkdata
         file: source/_data/link.yml
-        description: 在此添加/编辑友链，保存后约 1 分钟自动发布，不要在「友链页面」正文里直接改。
+        description: 在此添加/编辑友链分组与链接。
         fields:
           - label: 友链分组
             name: groups

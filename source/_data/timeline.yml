@@ -1,0 +1,14 @@
+intro: 这里记录一些值得纪念的节点。没有惊天动地的大事，只是想让时间留下痕迹。
+items:
+  - date: 2026-09
+    title: 博客重建
+    desc: 删除默认的 Hello World，更换 Butterfly 主题，接入可视化写作后台与 GitHub Actions 自动部署，写下真正的开篇文章。
+    future: false
+  - date: 2023-01
+    title: 博客诞生
+    desc: 用 Hexo 搭建了这个小站，部署在 GitHub Pages 上，绑定了域名 blog.yuuichi.me。
+    future: false
+  - date: Future
+    title: 更多可能
+    desc: 坚持记录，把半途而废的项目捡起来，去更多想去的地方。故事还在继续……
+    future: true
