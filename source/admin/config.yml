@@ -74,6 +74,27 @@ collections:
               - { label: 归档, name: archives, widget: object, required: false, fields: [{ label: 顶部背景图, name: top_img, widget: image, required: false }] }
               - { label: 标签, name: tags, widget: object, required: false, fields: [{ label: 顶部背景图, name: top_img, widget: image, required: false }] }
               - { label: 分类, name: categories, widget: object, required: false, fields: [{ label: 顶部背景图, name: top_img, widget: image, required: false }] }
+      - label: 首页名言
+        name: quotes
+        file: source/_data/quotes.yml
+        description: 首页头图大字。在线模式每次刷新显示随机名人名言，网络失败时用下方本地名言兜底。
+        fields:
+          - label: 显示模式
+            name: mode
+            widget: select
+            options:
+              - { label: '在线一言 + 本地兜底', value: online }
+              - { label: '仅本地随机', value: local }
+              - { label: '固定单句', value: fixed }
+          - { label: 一言分类, name: hitokoto_category, widget: string, hint: 'k=名人名言，其它见 hitokoto.cn 文档' }
+          - { label: 固定单句, name: fixed_quote, widget: string }
+          - label: 本地名言（兜底/本地模式）
+            name: local_quotes
+            widget: list
+            summary: '{{fields.text}}'
+            fields:
+              - { label: 名言内容, name: text, widget: string }
+              - { label: 出处, name: from, widget: string, required: false }
 
   - name: pages
     label: 页面

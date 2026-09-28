@@ -37,11 +37,9 @@ header#page-header(class=`${isHomeClass+isFixedClass}` style=bg_img)
       include ./post-info.pug
     else if is_home() 
       #site-info
-        h1#site-title=site_title
-        if theme.subtitle.enable
-          - var loadSubJs = true
-          #site-subtitle
-            span#subtitle
+        h1#site-title
+        #site-subtitle
+          span#home-quote-from
         if(theme.social)
           #site_social_icons
             !=fragment_cache('social', function(){return partial('includes/header/social')})
