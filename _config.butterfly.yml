@@ -889,8 +889,9 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
+    - <link rel="stylesheet" href="/css/social-qr.css">
   bottom:
-
+    - <script defer data-pjax src="/js/social-qr.js"></script>
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要請不要修改
