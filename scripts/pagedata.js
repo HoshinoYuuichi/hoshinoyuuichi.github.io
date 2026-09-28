@@ -26,10 +26,12 @@ hexo.extend.tag.register('aboutdata', () => {
   const tags = (d.tags || []).map((t) => `<span>${t}</span>`).join('')
 
   const links = (d.links || [])
-    .map(
-      (l) =>
-        `<a class="about-link-btn" href="${l.url}"${/^https?:/.test(l.url) ? ' target="_blank"' : ''}><i class="${l.icon}"></i> ${l.name}</a>`
-    )
+    .map((l) => {
+      const glyph = l.img
+        ? `<img class="about-link-icon" src="${l.img}" alt="${l.name}" />`
+        : `<i class="${l.icon}"></i>`
+      return `<a class="about-link-btn" href="${l.url}"${/^(https?:|mailto:)/.test(l.url) ? ' target="_blank"' : ''} rel="noopener">${glyph} <span>${l.name}</span></a>`
+    })
     .join('')
 
   const footer = d.footer_note ? `<p>${mdInline(d.footer_note)}</p>` : ''
@@ -43,13 +45,13 @@ hexo.extend.tag.register('aboutdata', () => {
     <p style="margin:.4em 0 0;">${d.motto}</p>
   </div>
 </div>
-<h2>关于这个博客</h2>
-<p>这里是我的「数字后花园」。不追热点、不蹭算法，只认真记录我想留下的东西：</p>
+<h2>${d.blog_heading || '关于这个博客'}</h2>
+<p>${d.blog_lead || ''}</p>
 <ul>${intro}</ul>
 ${footer}
-<h2>兴趣标签</h2>
+<h2>${d.tags_heading || '兴趣标签'}</h2>
 <div class="tag-cloud-about">${tags}</div>
-<h2>联系方式</h2>
+<h2>${d.contact_heading || '联系方式'}</h2>
 <div class="about-links">${links}</div>`
 })
 
@@ -74,6 +76,25 @@ hexo.extend.tag.register('myselfdata', () => {
 <div class="myself-chips">${keywords}</div>
 <h2>十问十答</h2>
 <div class="qa-grid">${cards}</div>`
+})
+
+hexo.extend.tag.register('messageboarddata', () => {
+  const d = loadData('messageboard')
+
+  const rules = (d.rules || [])
+    .map((line) => `<li>${mdInline(line)}</li>`)
+    .join('')
+
+  const note = d.note ? `<div class="note info modern"><p>${mdInline(d.note)}</p></div>` : ''
+
+  return `
+<div class="mb-banner">
+  <h2 style="margin:0;">${d.heading}</h2>
+  <p style="margin:.4em 0 0;">${d.sub}</p>
+</div>
+${note}
+<h2>${d.rules_heading || '留言须知'}</h2>
+<ul>${rules}</ul>`
 })
 
 hexo.extend.tag.register('timelinedata', () => {

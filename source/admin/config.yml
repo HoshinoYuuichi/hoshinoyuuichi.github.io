@@ -42,13 +42,6 @@ collections:
     label: 页面
     label_singular: 页面
     files:
-      - label: 留言板
-        name: messageboard
-        file: source/messageboard/index.md
-        fields:
-          - { label: 标题, name: title, widget: string }
-          - { label: 摘要, name: description, widget: text, required: false }
-          - { label: 正文, name: body, widget: markdown }
       - label: 友链页面
         name: linkpage
         file: source/link/index.md
@@ -71,25 +64,44 @@ collections:
           - { label: 英文名, name: name_en, widget: string }
           - { label: 身份标签, name: tagline, widget: string }
           - { label: 座右铭, name: motto, widget: string }
+          - { label: 博客板块标题, name: blog_heading, widget: string }
+          - { label: 博客板块引导语, name: blog_lead, widget: text }
           - label: 介绍要点
             name: intro
             widget: list
             summary: '{{fields.item}}'
             field: { label: 内容, name: item, widget: string }
           - { label: 底部说明（支持链接）, name: footer_note, widget: text, required: false }
+          - { label: 兴趣标签标题, name: tags_heading, widget: string }
           - label: 兴趣标签
             name: tags
             widget: list
             summary: '{{fields.item}}'
             field: { label: 标签, name: item, widget: string }
+          - { label: 联系方式标题, name: contact_heading, widget: string }
           - label: 联系方式
             name: links
             widget: list
             summary: '{{fields.name}}'
             fields:
               - { label: 名称, name: name, widget: string }
-              - { label: 图标类名, name: icon, widget: string, hint: '如 fa-brands fa-bilibili' }
-              - { label: 链接, name: url, widget: string }
+              - { label: 图标图片地址, name: img, widget: string, hint: '可用 cdn.simpleicons.org/图标名/颜色' }
+              - { label: 链接, name: url, widget: string, hint: '邮箱用 mailto: 开头' }
+
+      - label: 留言板内容
+        name: messageboarddata
+        file: source/_data/messageboard.yml
+        description: 编辑「留言板」的横幅、须知与提示。
+        fields:
+          - { label: 横幅标题, name: heading, widget: string }
+          - { label: 横幅副标题, name: sub, widget: text }
+          - { label: 提示语, name: note, widget: text, required: false }
+          - { label: 须知标题, name: rules_heading, widget: string }
+          - label: 须知条目
+            name: rules
+            widget: list
+            summary: '{{fields.item}}'
+            field: { label: 内容, name: item, widget: text }
 
       - label: Myself 页内容
         name: myselfdata
