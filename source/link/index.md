@@ -25,11 +25,9 @@ updated: 2026-09-28 20:00:00
 
 {% note primary %}
 
-- **名称**：星野悠一 / Yuuichi
+- **名称**：星野悠一 / Hoshino Yuuichi
 - **链接**：https://blog.yuuichi.me
-- **头像**：https://blog.yuuichi.me/img/tit.png
 - **描述**：一个普通御宅族的数字后花园
 {% endnote %}
-
 
 {% endnote %}
