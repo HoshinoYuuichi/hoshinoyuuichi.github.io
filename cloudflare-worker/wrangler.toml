@@ -1,0 +1,10 @@
+name = "sveltia-cms-auth"
+main = "src/index.js"
+compatibility_date = "2023-03-24"
+
+# 在 Cloudflare 控制台或本地填入以下机密变量后再部署：
+#   GITHUB_CLIENT_ID      GitHub OAuth App 的 Client ID
+#   GITHUB_CLIENT_SECRET  GitHub OAuth App 的 Client Secret（机密）
+# ALLOWED_DOMAINS 已内置为 blog.yuuichi.me，防止他人盗用本 Worker。
+[vars]
+ALLOWED_DOMAINS = "blog.yuuichi.me"
