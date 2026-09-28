@@ -20,8 +20,12 @@ if theme.menu
           ul.menus_item_child
             each val,lab in value 
               - const valArray = val.split('||')
+              - const isThree = valArray.length > 2
+              - const childUrl = isThree ? trim(valArray[1]) : trim(valArray[0])
+              - const childIcon = isThree ? trim(valArray[2]) : (valArray[1] ? trim(valArray[1]) : '')
+              - const childLabel = isThree ? trim(valArray[0]) : lab
               li
-                a.site-page.child(href=url_for(trim(valArray[0])))
-                  if valArray[1]
-                    i.fa-fw(class=trim(valArray[1]))
-                  span=' '+ lab
+                a.site-page.child(href=url_for(childUrl))
+                  if childIcon
+                    i.fa-fw(class=childIcon)
+                  span=' '+ childLabel

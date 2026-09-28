@@ -12,9 +12,10 @@ menu:
   日志: /timeline/ || fa fa-bell
   写文章: /admin/ || fas fa-pen-nib
   菜单 || fa fa-list:
-    - 关于 || /about/ || fa fa-sitemap
-    - myself || /myself/ || fa fa-id-card
-    - butterfly主题 || https://github.com/jerryc127/hexo-theme-butterfly/ || fa fa-heart
+    - '关于 || /about/ || fa fa-sitemap'
+    - 'myself || /myself/ || fa fa-id-card'
+    - 'butterfly主题 || https://github.com/jerryc127/hexo-theme-butterfly/ || fa fa-heart'
+    - '后台登录 || /admin/ || fas fa-lock'
 
 nav:
   logo: # image
