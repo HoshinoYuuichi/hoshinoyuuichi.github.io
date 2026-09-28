@@ -4,6 +4,7 @@ backend:
   name: github
   repo: HoshinoYuuichi/hoshinoyuuichi.github.io
   branch: main
+  base_url: https://sveltia-cms-auth.hoshinoyuuichi.workers.dev
 
 site_url: https://blog.yuuichi.me
 display_url: https://blog.yuuichi.me
