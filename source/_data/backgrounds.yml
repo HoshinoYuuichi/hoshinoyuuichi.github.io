@@ -1,0 +1,19 @@
+pages:
+  __home:
+    top_img: /img/index_img.png
+  about:
+    top_img: /img/index_img.png
+  myself:
+    top_img: /img/index_img.png
+  timeline:
+    top_img: /img/index_img.png
+  link:
+    top_img: /img/index_img.png
+  messageboard:
+    top_img: /img/index_img.png
+  archives:
+    top_img: /img/index_img.png
+  tags:
+    top_img: /img/index_img.png
+  categories:
+    top_img: /img/index_img.png

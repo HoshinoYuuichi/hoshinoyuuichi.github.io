@@ -38,6 +38,43 @@ collections:
       - { label: 摘要, name: description, widget: text, required: false }
       - { label: 正文, name: body, widget: markdown }
 
+  - name: siteconfig
+    label: 站点设置
+    label_singular: 站点设置
+    files:
+      - label: 公告与个人信息
+        name: sitesettings
+        file: source/_data/site.yml
+        description: 修改侧边栏公告、作者简介、Follow Me 按钮、站点副标题等。
+        fields:
+          - { label: 侧边栏公告, name: announcement, widget: text, required: false }
+          - { label: 作者卡片简介, name: author_desc, widget: text, required: false }
+          - { label: 建站日期, name: runtime_publish_date, widget: date, format: YYYY-MM-DD, hint: '用于网站资讯中的运行时间' }
+          - { label: Follow Me 文字, name: follow_me_text, widget: string }
+          - { label: Follow Me 图标, name: follow_me_icon, widget: string, hint: '如 fas fa-user-plus' }
+          - { label: Follow Me 链接, name: follow_me_link, widget: string }
+          - { label: 站点副标题, name: site_subtitle, widget: string, required: false }
+          - { label: 站点描述, name: site_description, widget: text, required: false }
+      - label: 各页面背景图
+        name: backgrounds
+        file: source/_data/backgrounds.yml
+        description: 替换每个页面顶部的背景图；留空则沿用默认。修改后约 1 分钟自动发布。
+        fields:
+          - label: 页面背景
+            name: pages
+            widget: object
+            collapsed: false
+            fields:
+              - { label: 首页, name: __home, widget: object, required: false, fields: [{ label: 顶部背景图, name: top_img, widget: image, required: false }] }
+              - { label: 关于, name: about, widget: object, required: false, fields: [{ label: 顶部背景图, name: top_img, widget: image, required: false }] }
+              - { label: Myself, name: myself, widget: object, required: false, fields: [{ label: 顶部背景图, name: top_img, widget: image, required: false }] }
+              - { label: 时间轴, name: timeline, widget: object, required: false, fields: [{ label: 顶部背景图, name: top_img, widget: image, required: false }] }
+              - { label: 友链, name: link, widget: object, required: false, fields: [{ label: 顶部背景图, name: top_img, widget: image, required: false }] }
+              - { label: 留言板, name: messageboard, widget: object, required: false, fields: [{ label: 顶部背景图, name: top_img, widget: image, required: false }] }
+              - { label: 归档, name: archives, widget: object, required: false, fields: [{ label: 顶部背景图, name: top_img, widget: image, required: false }] }
+              - { label: 标签, name: tags, widget: object, required: false, fields: [{ label: 顶部背景图, name: top_img, widget: image, required: false }] }
+              - { label: 分类, name: categories, widget: object, required: false, fields: [{ label: 顶部背景图, name: top_img, widget: image, required: false }] }
+
   - name: pages
     label: 页面
     label_singular: 页面
