@@ -86,7 +86,20 @@ collections:
             fields:
               - { label: 名称, name: name, widget: string }
               - { label: 图标图片地址, name: img, widget: string, hint: '可用 cdn.simpleicons.org/图标名/颜色' }
-              - { label: 链接, name: url, widget: string, hint: '邮箱用 mailto: 开头' }
+              - { label: 链接, name: url, widget: string, required: false, hint: '邮箱用 mailto: 开头' }
+              - { label: 弹窗二维码, name: modal, widget: image, required: false, hint: '填写后点击图标弹出二维码' }
+              - { label: 二维码提示, name: tip, widget: string, required: false }
+          - { label: 捐助标题, name: donate_heading, widget: string }
+          - { label: 捐助说明, name: donate_tip, widget: text, required: false }
+          - label: 捐助方式
+            name: donate
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - { label: 名称, name: name, widget: string }
+              - { label: 图标图片地址, name: img, widget: string }
+              - { label: 收款二维码, name: modal, widget: image }
+              - { label: 二维码提示, name: tip, widget: string, required: false }
 
       - label: 留言板内容
         name: messageboarddata
