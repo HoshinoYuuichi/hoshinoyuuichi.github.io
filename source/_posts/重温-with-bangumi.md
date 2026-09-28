@@ -2,10 +2,9 @@
 title: 重温 with bangumi
 date: 2026-09-28 17:02:00
 tags:
-  - 生活
-categories:
-  - 博客
   - ACG
+categories:
+  - 生活
 cover: /img/uploads/pasted-image-1790588291814.png
 description: 个人bangumi链接：https://bangumi.tv/user/hoshinoyuuichi
 ---
