@@ -9,3 +9,13 @@ groups:
         link: https://blog.xlyz.top/
         avatar: /img/uploads/170593600.png
         descr: A huge black rat
+  - class_name: 母校链接
+    link_list:
+      - name: 齐鲁工业大学（山东省科学院）
+        link: https://www.qlu.edu.cn/
+        avatar: /img/uploads/屏幕截图 2026-09-28 170718.png
+        descr: 山东省“冲一流”建设高校
+      - name: 数学与人工智能学部
+        link: https://slx.qlu.edu.cn/
+        avatar: /img/uploads/屏幕截图 2026-09-28 170859.png
+        descr: 山东省人工智能研究院、齐鲁工业大学数学与统计学院
