@@ -54,9 +54,23 @@ collections:
         fields:
           - { label: 标题, name: title, widget: string }
           - { label: 正文, name: body, widget: markdown }
-      - label: 友链
-        name: link
-        file: source/link/index.md
+      - label: 友链数据
+        name: linkdata
+        file: source/_data/link.yml
+        description: 在此添加/编辑友链，保存后约 1 分钟自动发布，不要在「友链页面」正文里直接改。
         fields:
-          - { label: 标题, name: title, widget: string }
-          - { label: 正文, name: body, widget: markdown }
+          - label: 友链分组
+            name: groups
+            widget: list
+            summary: '{{fields.class_name}}'
+            fields:
+              - { label: 分组名称, name: class_name, widget: string }
+              - label: 链接列表
+                name: link_list
+                widget: list
+                summary: '{{fields.name}}'
+                fields:
+                  - { label: 名称, name: name, widget: string }
+                  - { label: 链接, name: link, widget: string }
+                  - { label: 头像地址, name: avatar, widget: image, required: false }
+                  - { label: 简介, name: descr, widget: string, required: false }

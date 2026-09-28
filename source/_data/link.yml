@@ -1,6 +1,7 @@
-- class_name: 友情链接
-  link_list:
-    - name: Nixiak
-      link: https://nixiak.xyz/
-      avatar: https://nixiak.xyz/img/avatar.png
-      descr: 一个有趣的灵魂
+groups:
+  - class_name: 友情链接
+    link_list:
+      - name: Nixiak
+        link: https://nixiak.xyz/
+        avatar: https://nixiak.xyz/img/avatar.png
+        descr: 一个有趣的灵魂
