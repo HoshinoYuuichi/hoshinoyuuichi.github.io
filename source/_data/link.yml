@@ -2,6 +2,10 @@ groups:
   - class_name: 友情链接
     link_list:
       - name: Nixiak
-        link: https://nixiak.xyz/
+        link: https://github.com/NixiakAI
         avatar: /img/uploads/f7d97a2e511436725b2323a793e1d540.jpg
-        descr: ''
+        descr: Nixiak's Github
+      - name: XLY23333
+        link: https://blog.xlyz.top/
+        avatar: /img/uploads/170593600.png
+        descr: A huge black rat
