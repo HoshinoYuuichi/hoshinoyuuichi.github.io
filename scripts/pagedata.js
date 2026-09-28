@@ -46,7 +46,7 @@ hexo.extend.tag.register('aboutdata', () => {
         (l) => `<a class="about-link-btn js-qr" href="javascript:void(0);" title="${l.name}" data-qr="${l.modal}" data-tip="${l.tip || ''}"><img class="about-link-icon" src="${l.img}" alt="${l.name}" /></a>`
       )
       .join('')
-    donate = `<h2>${d.donate_heading || '捐助'}</h2><p>${d.donate_tip || ''}</p><div class="about-links">${donateLinks}</div>`
+    donate = `<h2>${d.donate_heading || '捐助'}</h2>${d.donate_tip ? `<p>${d.donate_tip}</p>` : ''}<div class="about-links">${donateLinks}</div>`
   }
 
   return `

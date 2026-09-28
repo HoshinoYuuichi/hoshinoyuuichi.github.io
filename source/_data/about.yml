@@ -13,7 +13,7 @@ footer_note: '程序基于 [Hexo](https://hexo.io/) 与 [Butterfly](https://gith
 tags_heading: 兴趣标签
 contact_heading: 联系方式
 donate_heading: 捐助
-donate_tip: 如果这里的内容对你有帮助，可以请我喝杯奶茶，感谢支持！
+donate_tip: ''
 tags:
   - 编程
   - 折腾
@@ -40,6 +40,6 @@ donate:
     modal: /img/zfb.jpg
     tip: 打开支付宝扫一扫
   - name: 微信
-    img: https://cdn.simpleicons.org/wechatpay/07C160
+    img: https://cdn.simpleicons.org/wechat/07C160
     modal: /img/wx.jpg
     tip: 打开微信扫一扫

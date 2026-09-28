@@ -44,6 +44,7 @@ social:
   fas fa-envelope: mailto:HoshinoYuuichi@foxmail.com || 邮箱
   fab fa-bilibili: https://space.bilibili.com/122659524 || Bilibili
   fab fa-twitter: https://x.com/Hoshino_Yuuichi || X
+  fab fa-weixin: /img/wechat-qr.jpg || 微信
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
@@ -675,8 +676,8 @@ aside:
     enable: true
     description:
     button:
-      enable: false
-      icon: fab fa-github
+      enable: true
+      icon: fas fa-user-plus
       text: Follow Me
       link: https://github.com/Hoshinoyuuichi
   card_announcement:
