@@ -3,9 +3,14 @@ hitokoto_category: k
 fixed_quote: 永远相信美好的事情即将发生
 local_quotes:
   - text: 永远相信美好的事情即将发生
+    from: 雷军
   - text: 我们都是阴沟里的虫子，但总还是得有人仰望星空。
     from: 王尔德
   - text: 生活不是等待风暴过去，而是学会在雨中起舞。
+    from: ''
   - text: 你今天的努力，是幸运的伏笔。
+    from: ''
   - text: 愿你出走半生，归来仍是少年。
+    from: ''
   - text: 种一棵树最好的时间是十年前，其次是现在。
+    from: ''
