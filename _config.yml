@@ -115,5 +115,5 @@ local_search:
     hits_empty: "We didn't find any results for the search: ${query}" 
 
 lazyload:
-  enable: true
+  enable: false
   loadingImg: /img/loading.gif

@@ -15,3 +15,7 @@
       a(href='https://github.com/jerryc127/hexo-theme-butterfly')= 'Butterfly'
   if theme.footer.custom_text
     .footer_custom_text!=`${theme.footer.custom_text}`
+  if theme.footer.ICP && theme.footer.ICP.enable
+    .footer_icp
+      p
+        a(href=theme.footer.ICP.url target='_blank')= theme.footer.ICP.text

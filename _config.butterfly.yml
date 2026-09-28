@@ -14,13 +14,12 @@ menu:
   菜单 || fa fa-list:
     - '关于 || /about/ || fa fa-sitemap'
     - 'myself || /myself/ || fa fa-id-card'
-    - 'butterfly主题 || https://github.com/jerryc127/hexo-theme-butterfly/ || fa fa-heart'
     - '后台登录 || /admin/ || fas fa-lock'
 
 nav:
   logo: # image
   display_title: true
-  fixed: true # fixed navigation bar
+  fixed: false # fixed navigation bar
 
 # Code Blocks (代碼相關)
 # --------------------------------------
@@ -441,7 +440,7 @@ footer:
     enable: true
     since: 2023
   custom_text: 
-  copyright: true # Copyright of theme and framework
+  copyright: false # Copyright of theme and framework
   ICP: 
      enable: true
      url: https://icp.gov.moe/?keyword=20230081
@@ -890,7 +889,6 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - <link rel="stylesheet" href="/css/customnav.css">
   bottom:
     # - <script src="xxxx"></script>
 
