@@ -1,8 +1,7 @@
 ---
 title: 你好，这里是 Yuuichi 的博客
 date: 2026-09-28 20:00:00
-tags:
-  - 博客
+tags: []
 categories:
   - 生活
 cover: /img/background2.jpg
