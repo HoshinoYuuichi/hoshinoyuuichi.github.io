@@ -5,10 +5,14 @@ online_sources:
     enabled: true
     type: hitokoto
     url: https://v1.hitokoto.cn/?c=k
+    text_path: ''
+    from_path: ''
   - name: 一言 · 动漫
     enabled: true
     type: hitokoto
     url: https://v1.hitokoto.cn/?c=a
+    text_path: ''
+    from_path: ''
 local_quotes:
   - text: 永远相信美好的事情即将发生。
     from: 雷军
@@ -21,7 +25,9 @@ local_quotes:
   - text: 愿你出走半生，归来仍是少年。
     from: ''
   - text: 种一棵树最好的时间是十年前，其次是现在。
+    from: ''
   - text: 泪藏于心，笑逐颜开。
+    from: ''
   - text: 不要因为走得太远，而忘记为什么出发。
     from: 纪伯伦
   - text: 世界上只有一种英雄主义，就是看清生活的真相之后依然热爱生活。
@@ -59,11 +65,10 @@ local_quotes:
   - text: 万物皆有裂痕，那是光照进来的地方。
     from: 莱昂纳德·科恩
   - text: 心之所向，素履以往；生如逆旅，一苇以航。
-  - text: 乾坤未定，你我皆是黑马。
+    from: ''
   - text: 怕什么真理无穷，进一寸有一寸的欢喜。
     from: 胡适
   - text: 既然选择了远方，便只顾风雨兼程。
     from: 汪国真
   - text: 愿你成为自己的太阳，无需凭借谁的光。
-  - text: 此心安处，便是吾乡。
-    from: 苏轼
+    from: ''
