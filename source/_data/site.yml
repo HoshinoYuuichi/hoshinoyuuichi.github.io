@@ -7,5 +7,5 @@ follow_me_link: https://github.com/Hoshinoyuuichi
 site_subtitle: ''
 site_description: ''
 waline_server: 'https://yuuichi-waline.vercel.app'
-umami_script: ''
-umami_id: ''
+umami_script: 'https://umami-yuuichi.vercel.app/script.js'
+umami_id: '6cb7b9e4-0db9-42ab-90aa-a1eb0e4af644'
