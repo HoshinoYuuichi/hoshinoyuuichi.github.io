@@ -152,36 +152,6 @@ collections:
                   - { label: 链接, name: link, widget: string }
                   - { label: 头像地址, name: avatar, widget: image, required: false }
                   - { label: 简介, name: descr, widget: string, required: false }
-
-  - name: custompages
-    label: 分页内容 · 自定义页面
-    label_singular: 自定义页面
-    folder: source/pages
-    create: true
-    delete: true
-    slug: '{{slug}}'
-    extension: md
-    identifier_field: title
-    sortable_fields: [title, date]
-    fields:
-      - { label: 标题, name: title, widget: string }
-      - { label: 发布日期, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
-      - { label: 顶部背景图, name: top_img, widget: image, required: false }
-      - { label: 摘要, name: description, widget: text, required: false }
-      - { label: 加入菜单, name: add_to_menu, widget: boolean, default: false, hint: '保存后自动加入顶部导航' }
-      - { label: 正文, name: body, widget: markdown }
-
-  - name: pagelayout
-    label: 分页内容
-    label_singular: 分页内容
-    files:
-      - label: 友链页面
-        name: linkpage
-        file: source/link/index.md
-        fields:
-          - { label: 标题, name: title, widget: string }
-          - { label: 摘要, name: description, widget: text, required: false }
-          - { label: 正文, name: body, widget: markdown }
       - label: 关于页内容
         name: aboutdata
         file: source/_data/about.yml
@@ -228,7 +198,6 @@ collections:
               - { label: 图标图片地址, name: img, widget: string }
               - { label: 收款二维码, name: modal, widget: image }
               - { label: 二维码提示, name: tip, widget: string, required: false }
-
       - label: 留言板内容
         name: messageboarddata
         file: source/_data/messageboard.yml
@@ -243,7 +212,6 @@ collections:
             widget: list
             summary: '{{fields.item}}'
             field: { label: 内容, name: item, widget: text }
-
       - label: Myself 页内容
         name: myselfdata
         file: source/_data/myself.yml
@@ -263,7 +231,6 @@ collections:
             fields:
               - { label: 问题, name: q, widget: string }
               - { label: 回答, name: a, widget: text }
-
       - label: 时间轴内容
         name: timelinedata
         file: source/_data/timeline.yml
@@ -279,3 +246,22 @@ collections:
               - { label: 标题, name: title, widget: string }
               - { label: 描述, name: desc, widget: text }
               - { label: 标记为未来, name: future, widget: boolean, default: false }
+
+  - name: pagelayout
+    label: 分页内容
+    label_singular: 页面
+    folder: source/pages
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    extension: md
+    identifier_field: title
+    sortable_fields: [title, date]
+    description: 在此新建或删除普通内容页。
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: 顶部背景图, name: top_img, widget: image, required: false }
+      - { label: 摘要, name: description, widget: text, required: false }
+      - { label: 加入菜单, name: add_to_menu, widget: boolean, default: false, hint: '保存后自动加入顶部导航' }
+      - { label: 正文, name: body, widget: markdown }

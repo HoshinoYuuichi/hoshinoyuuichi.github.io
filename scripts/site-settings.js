@@ -120,7 +120,8 @@ hexo.extend.filter.register('template_locals', (locals) => {
 
   const p = page.path || ''
   const isMessageboard = p === 'messageboard/index.html' || p === 'messageboard/'
-  page.comments = isMessageboard
+  const isPost = page.__post === true || (hexo.config.post_dir && p.indexOf(hexo.config.post_dir) === 0) || /^\d{4}\//.test(p)
+  page.comments = isMessageboard || isPost
 
   return locals
 })
