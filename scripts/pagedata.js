@@ -112,7 +112,7 @@ hexo.extend.tag.register('messageboarddata', () => {
     .map((line) => `<li>${mdInline(line)}</li>`)
     .join('')
 
-  const note = d.note ? `<div class="note info modern"><p>${mdInline(d.note)}</p></div>` : ''
+  const note = d.note ? `<div class="note info modern no-icon"><p>${mdInline(d.note)}</p></div>` : ''
 
   return `
 <div class="mb-banner">

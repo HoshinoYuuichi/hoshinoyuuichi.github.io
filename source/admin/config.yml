@@ -1,20 +1,3 @@
-# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
-
-backend:
-  name: github
-  repo: HoshinoYuuichi/hoshinoyuuichi.github.io
-  branch: main
-  base_url: https://sveltia-cms-auth.hoshinoyuuichi.workers.dev
-
-site_url: https://blog.yuuichi.me
-display_url: https://blog.yuuichi.me
-logo_url: https://blog.yuuichi.me/img/tit.png
-
-locale: zh_Hans
-
-media_folder: source/img/uploads
-public_folder: /img/uploads
-
 collections:
   - name: posts
     label: 文章
@@ -38,9 +21,9 @@ collections:
       - { label: 摘要, name: description, widget: text, required: false }
       - { label: 正文, name: body, widget: markdown }
 
-  - name: siteconfig
-    label: 站点设置
-    label_singular: 站点设置
+  - name: pagedata
+    label: 页面内容
+    label_singular: 页面内容
     files:
       - label: 公告与个人信息
         name: sitesettings
@@ -51,14 +34,14 @@ collections:
           - { label: 作者卡片简介, name: author_desc, widget: text, required: false }
           - { label: 建站日期, name: runtime_publish_date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD, hint: '用于网站运行时间' }
           - { label: Follow Me 文字, name: follow_me_text, widget: string }
-          - { label: Follow Me 图标, name: follow_me_icon, widget: string, hint: '如 fas fa-user-plus' }
+          - { label: Follow Me 图标, name: follow_me_icon, widget: string, hint: '如 fab fa-github' }
           - { label: Follow Me 链接, name: follow_me_link, widget: string }
           - { label: 站点副标题, name: site_subtitle, widget: string, required: false }
           - { label: 站点描述, name: site_description, widget: text, required: false }
       - label: 各页面背景图
         name: backgrounds
         file: source/_data/backgrounds.yml
-        description: 替换每个页面顶部的背景图；留空则沿用默认。修改后约 1 分钟自动发布。
+        description: 替换每个页面顶部的背景图；留空则沿用默认。
         fields:
           - label: 页面背景
             name: pages
@@ -77,28 +60,47 @@ collections:
       - label: 首页名言
         name: quotes
         file: source/_data/quotes.yml
-        description: 首页头图大字。在线模式每次刷新显示随机名人名言，网络失败时用下方本地名言兜底。
+        description: 首页头图大字。在线模式会尝试一言，失败或刷新时从内置名言/动漫台词库随机显示。
         fields:
           - label: 显示模式
             name: mode
             widget: select
             options:
-              - { label: '在线一言 + 本地兜底', value: online }
+              - { label: '在线 + 内置随机', value: online }
               - { label: '仅本地随机', value: local }
               - { label: '固定单句', value: fixed }
-          - { label: 一言分类, name: hitokoto_category, widget: string, hint: 'k=名人名言，其它见 hitokoto.cn 文档' }
           - { label: 固定单句, name: fixed_quote, widget: string }
-          - label: 本地名言（兜底/本地模式）
+          - label: 本地名言
             name: local_quotes
             widget: list
             summary: '{{fields.text}}'
             fields:
               - { label: 名言内容, name: text, widget: string }
               - { label: 出处, name: from, widget: string, required: false }
+      - label: 友链数据
+        name: linkdata
+        file: source/_data/link.yml
+        description: 在此添加/编辑友链分组与链接。
+        fields:
+          - label: 友链分组
+            name: groups
+            widget: list
+            summary: '{{fields.class_name}}'
+            fields:
+              - { label: 分组名称, name: class_name, widget: string }
+              - label: 链接列表
+                name: link_list
+                widget: list
+                summary: '{{fields.name}}'
+                fields:
+                  - { label: 名称, name: name, widget: string }
+                  - { label: 链接, name: link, widget: string }
+                  - { label: 头像地址, name: avatar, widget: image, required: false }
+                  - { label: 简介, name: descr, widget: string, required: false }
 
-  - name: pages
-    label: 页面
-    label_singular: 页面
+  - name: pagelayout
+    label: 分页内容
+    label_singular: 分页内容
     files:
       - label: 友链页面
         name: linkpage
@@ -107,15 +109,10 @@ collections:
           - { label: 标题, name: title, widget: string }
           - { label: 摘要, name: description, widget: text, required: false }
           - { label: 正文, name: body, widget: markdown }
-
-  - name: homepage
-    label: 首页内容
-    label_singular: 首页内容
-    files:
       - label: 关于页内容
         name: aboutdata
         file: source/_data/about.yml
-        description: 编辑「关于」页的头像、简介、兴趣标签和联系方式。
+        description: 编辑「关于」页的头像、简介、兴趣标签、联系方式和捐助。
         fields:
           - { label: 头像, name: avatar, widget: image }
           - { label: 中文名, name: name, widget: string }
@@ -194,10 +191,10 @@ collections:
               - { label: 问题, name: q, widget: string }
               - { label: 回答, name: a, widget: text }
 
-      - label: 日志时间线
+      - label: 时间轴内容
         name: timelinedata
         file: source/_data/timeline.yml
-        description: 编辑「日志」页的时间节点。
+        description: 编辑「时间轴」页的时间节点。
         fields:
           - { label: 开头语, name: intro, widget: text, required: false }
           - label: 时间节点
@@ -209,24 +206,3 @@ collections:
               - { label: 标题, name: title, widget: string }
               - { label: 描述, name: desc, widget: text }
               - { label: 标记为未来, name: future, widget: boolean, default: false }
-
-      - label: 友链数据
-        name: linkdata
-        file: source/_data/link.yml
-        description: 在此添加/编辑友链分组与链接。
-        fields:
-          - label: 友链分组
-            name: groups
-            widget: list
-            summary: '{{fields.class_name}}'
-            fields:
-              - { label: 分组名称, name: class_name, widget: string }
-              - label: 链接列表
-                name: link_list
-                widget: list
-                summary: '{{fields.name}}'
-                fields:
-                  - { label: 名称, name: name, widget: string }
-                  - { label: 链接, name: link, widget: string }
-                  - { label: 头像地址, name: avatar, widget: image, required: false }
-                  - { label: 简介, name: descr, widget: string, required: false }

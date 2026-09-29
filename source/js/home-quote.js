@@ -9,6 +9,13 @@
     return list[Math.floor(Math.random() * list.length)]
   }
 
+  function pickAnime() {
+    var pool = window.ANIME_QUOTE_POOL || []
+    if (!pool.length) return null
+    var item = pool[Math.floor(Math.random() * pool.length)]
+    return { text: item.t, from: item.f }
+  }
+
   function render(text, from) {
     if (titleEl) titleEl.textContent = text || ''
     if (fromEl) {
@@ -33,7 +40,7 @@
       return
     }
 
-    var initial = pickLocal()
+    var initial = Math.random() < 0.5 ? pickLocal() : pickAnime() || pickLocal()
     render(initial.text, initial.from)
 
     var cb = 'HomeQuoteCb_' + Math.floor(Math.random() * 1e9)
@@ -59,7 +66,8 @@
     }
 
     var s = document.createElement('script')
-    var cat = encodeURIComponent(cfg.hitokoto_category || 'k')
+    var cats = ['k', 'a']
+    var cat = cats[Math.floor(Math.random() * cats.length)]
     s.src = 'https://v1.hitokoto.cn/?c=' + cat + '&callback=' + cb
     s.onerror = cleanup
     document.head.appendChild(s)
