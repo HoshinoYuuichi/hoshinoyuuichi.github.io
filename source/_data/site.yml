@@ -6,4 +6,4 @@ follow_me_icon: fab fa-github
 follow_me_link: https://github.com/Hoshinoyuuichi
 site_subtitle: ''
 site_description: ''
-waline_server: ''
+waline_server: 'https://yuuichi-waline.vercel.app'
