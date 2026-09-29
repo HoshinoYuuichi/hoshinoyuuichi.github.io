@@ -1,6 +1,14 @@
 mode: online
-hitokoto_category: k
 fixed_quote: 永远相信美好的事情即将发生
+online_sources:
+  - name: 一言 · 名人名言
+    enabled: true
+    type: hitokoto
+    url: https://v1.hitokoto.cn/?c=k
+  - name: 一言 · 动漫
+    enabled: true
+    type: hitokoto
+    url: https://v1.hitokoto.cn/?c=a
 local_quotes:
   - text: 永远相信美好的事情即将发生。
     from: 雷军

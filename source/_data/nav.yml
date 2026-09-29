@@ -1,0 +1,31 @@
+items:
+  - label: 首页
+    url: /
+    icon: fa fa-home
+  - label: 归档
+    url: /archives/
+    icon: fa fa-archive
+  - label: 标签
+    url: /tags/
+    icon: fa fa-tags
+  - label: 分类
+    url: /categories/
+    icon: fa fa-folder-open
+  - label: 留言板
+    url: /messageboard/
+    icon: fa fa-paper-plane
+  - label: 友链
+    url: /link/
+    icon: fa fa-link
+  - label: 时间轴
+    url: /timeline/
+    icon: fa fa-bell
+  - label: 菜单
+    icon: fa fa-list
+    children:
+      - label: 关于
+        url: /about/
+        icon: fa fa-sitemap
+      - label: 后台登录
+        url: /admin/
+        icon: fas fa-lock

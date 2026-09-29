@@ -53,6 +53,7 @@ collections:
           - { label: Follow Me 链接, name: follow_me_link, widget: string }
           - { label: 站点副标题, name: site_subtitle, widget: string, required: false }
           - { label: 站点描述, name: site_description, widget: text, required: false }
+          - { label: Waline 服务地址, name: waline_server, widget: string, required: false, hint: '部署 Waline 后填入，如 https://waline.xxx.com' }
       - label: 各页面背景图
         name: backgrounds
         file: source/_data/backgrounds.yml
@@ -75,7 +76,7 @@ collections:
       - label: 首页名言
         name: quotes
         file: source/_data/quotes.yml
-        description: 首页头图大字。在线模式会尝试一言，失败或刷新时从内置名言/动漫台词库随机显示。
+        description: 首页头图大字。在线模式会依次尝试启用的在线源，全部失败时从本地名言/动漫台词库随机显示。
         fields:
           - label: 显示模式
             name: mode
@@ -85,6 +86,23 @@ collections:
               - { label: '仅本地随机', value: local }
               - { label: '固定单句', value: fixed }
           - { label: 固定单句, name: fixed_quote, widget: string }
+          - label: 在线源（可添加/排序/启停）
+            name: online_sources
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - { label: 备注名, name: name, widget: string }
+              - { label: 启用, name: enabled, widget: boolean, default: true }
+              - label: 源类型
+                name: type
+                widget: select
+                options:
+                  - { label: '一言（hitokoto）', value: hitokoto }
+                  - { label: '通用 JSON', value: json }
+                  - { label: '纯文本（直接显示）', value: text }
+              - { label: 接口地址 / 文本内容', name: url, widget: string }
+              - { label: 正文字段路径（通用JSON）', name: text_path, widget: string, required: false }
+              - { label: 出处字段路径（通用JSON）', name: from_path, widget: string, required: false }
           - label: 本地名言
             name: local_quotes
             widget: list
@@ -92,6 +110,28 @@ collections:
             fields:
               - { label: 名言内容, name: text, widget: string }
               - { label: 出处, name: from, widget: string, required: false }
+      - label: 导航菜单
+        name: nav
+        file: source/_data/nav.yml
+        description: 编辑顶部导航。可增删菜单项、改名称/链接/图标；含子菜单的项会显示为下拉。
+        fields:
+          - label: 菜单项
+            name: items
+            widget: list
+            summary: '{{fields.label}}'
+            fields:
+              - { label: 名称, name: label, widget: string }
+              - { label: 链接（含子菜单可留空）', name: url, widget: string, required: false }
+              - { label: 图标, name: icon, widget: string, required: false }
+              - label: 子菜单
+                name: children
+                widget: list
+                required: false
+                summary: '{{fields.label}}'
+                fields:
+                  - { label: 名称, name: label, widget: string }
+                  - { label: 链接, name: url, widget: string }
+                  - { label: 图标, name: icon, widget: string, required: false }
       - label: 友链数据
         name: linkdata
         file: source/_data/link.yml
@@ -112,6 +152,24 @@ collections:
                   - { label: 链接, name: link, widget: string }
                   - { label: 头像地址, name: avatar, widget: image, required: false }
                   - { label: 简介, name: descr, widget: string, required: false }
+
+  - name: custompages
+    label: 分页内容 · 自定义页面
+    label_singular: 自定义页面
+    folder: source/pages
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    extension: md
+    identifier_field: title
+    sortable_fields: [title, date]
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: 顶部背景图, name: top_img, widget: image, required: false }
+      - { label: 摘要, name: description, widget: text, required: false }
+      - { label: 加入菜单, name: add_to_menu, widget: boolean, default: false, hint: '保存后自动加入顶部导航' }
+      - { label: 正文, name: body, widget: markdown }
 
   - name: pagelayout
     label: 分页内容
