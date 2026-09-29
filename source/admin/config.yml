@@ -1,3 +1,18 @@
+backend:
+  name: github
+  repo: HoshinoYuuichi/hoshinoyuuichi.github.io
+  branch: main
+  base_url: https://sveltia-cms-auth.hoshinoyuuichi.workers.dev
+
+site_url: https://blog.yuuichi.me
+display_url: https://blog.yuuichi.me
+logo_url: https://blog.yuuichi.me/img/tit.png
+
+locale: zh_Hans
+
+media_folder: source/img/uploads
+public_folder: /img/uploads
+
 collections:
   - name: posts
     label: 文章
