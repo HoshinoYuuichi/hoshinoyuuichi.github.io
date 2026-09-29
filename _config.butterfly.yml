@@ -930,8 +930,8 @@ CDN:
     # disqusjs:
     # disqusjs_css:
     # twikoo:
-    # waline_js:
-    # waline_css:
+    waline_js: /js/lib/waline.js
+    waline_css: /js/lib/waline.css
     # sharejs:
     # sharejs_css:
     # mathjax:
