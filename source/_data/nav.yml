@@ -27,5 +27,5 @@ items:
         url: /about/
         icon: fa fa-sitemap
       - label: 后台登录
-        url: /admin/
+        url: /dashboard/
         icon: fas fa-lock
