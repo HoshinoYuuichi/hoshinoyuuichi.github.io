@@ -54,6 +54,8 @@ collections:
           - { label: 站点副标题, name: site_subtitle, widget: string, required: false }
           - { label: 站点描述, name: site_description, widget: text, required: false }
           - { label: Waline 服务地址, name: waline_server, widget: string, required: false, hint: '部署 Waline 后填入，如 https://waline.xxx.com' }
+          - { label: Umami 统计脚本地址, name: umami_script, widget: string, required: false, hint: '如 https://umami.xxx.com/script.js' }
+          - { label: Umami 网站ID, name: umami_id, widget: string, required: false, hint: '在 Umami 后台添加网站后得到的 data-website-id' }
       - label: 各页面背景图
         name: backgrounds
         file: source/_data/backgrounds.yml
